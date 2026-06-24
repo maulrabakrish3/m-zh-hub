@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 温和相遇</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #fafafa;
+            color: #1e2a3a;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero small {
+            display: block;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-weight: 500;
+            font-size: 2rem;
+            color: #0b1a2b;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            font-weight: 400;
+            color: #546e7a;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin: 1.8rem 0 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .lead em {
+            font-style: italic;
+            color: #1f4e6b;
+        }
+
+        .story-block {
+            margin: 2.2rem 0;
+        }
+
+        .story-block p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-quiet {
+            background: transparent;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .feature-quiet h2 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            color: #1a2b3b;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.2px;
+            border-left: 3px solid #b4c8d6;
+            padding-left: 0.9rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.9rem;
+        }
+
+        .feature-list li {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 0.9rem 1.4rem;
+            font-size: 0.95rem;
+            color: #1f3a4b;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            border: 1px solid #edeff2;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            font-weight: 600;
+            color: #6d8a9c;
+            font-size: 1.4rem;
+            line-height: 1;
+            margin-right: 0.2rem;
+        }
+
+        .scene-note {
+            background: #f3f6fa;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            margin: 2.5rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .scene-note h3 {
+            font-weight: 450;
+            font-size: 1.05rem;
+            color: #173342;
+            margin-bottom: 0.8rem;
+        }
+
+        .scene-note p {
+            font-size: 0.95rem;
+            color: #314b5c;
+        }
+
+        .faq-mini {
+            margin: 2.8rem 0 2rem;
+            border-top: 1px dashed #d5dee6;
+            padding-top: 2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #edf0f4;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 450;
+            color: #1a3a4d;
+            cursor: pointer;
+            font-size: 0.98rem;
+            padding: 0.2rem 0;
+            transition: color 0.15s;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::before {
+            content: "﹢";
+            display: inline-block;
+            width: 1.2rem;
+            color: #7f9baa;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "−";
+        }
+
+        .faq-mini details p {
+            margin-top: 0.5rem;
+            margin-left: 1.2rem;
+            font-size: 0.9rem;
+            color: #3e5869;
+            padding-right: 0.5rem;
+        }
+
+        .gentle-close {
+            margin: 3rem 0 0.5rem;
+            padding: 1.2rem 0 0;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+            color: #3d5b6e;
+        }
+
+        .gentle-close a {
+            color: #1a4d6b;
+            text-decoration: none;
+            border-bottom: 1px solid #bdd0dc;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .gentle-close a:hover {
+            border-bottom-color: #1a4d6b;
+            color: #0b2b3d;
+        }
+
+        .footnote {
+            margin-top: 3.5rem;
+            font-size: 0.8rem;
+            color: #99aebb;
+            text-align: left;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .lead {
+                font-size: 1rem;
+            }
+            .feature-list li {
+                padding: 0.8rem 1.1rem;
+            }
+            .scene-note {
+                padding: 1.2rem 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <small>· 一 次 温 和 的 相 遇</small>
+            <h1>你或许在找 <span>一个安静的游戏角落</span></h1>
+        </div>
+
+        <div class="lead">
+            有时候打开一个网站，就想快速知道：<em>这里有什么？适合我吗？</em>  
+            下面是一段平实的讲述，关于「爱游戏」究竟想成为怎样的地方。
+        </div>
+
+        <div class="story-block">
+            <p>
+                在浏览器的地址栏输入一串字母，按下回车，页面出现——这个瞬间，你大概只在意一件事：<br>
+                <strong>这个网站能为我做什么？</strong> 是提供轻松的小游戏，还是聚集了一群同好？ 
+                没有夸张的弹窗，也没有繁杂的引导，你希望第一眼就能判断值不值得留下来。
+            </p>
+            <p>
+                <a href="https://cntv-igame.com" style="color: #1a4d6b; text-decoration: none; border-bottom: 1px solid #b0c9d9;">爱游戏</a> 不想让你失望。它从设计之初就避开喧闹——没有刺眼的广告墙，没有强制注册的围栏。 
+                你看到的，是一个偏向安静、偏向简洁的界面，游戏内容以一种不打扰的方式陈列。 
+                谈不上完美，但至少诚实：它希望成为你偶尔想放松时，一个不费力的选项。
+            </p>
+        </div>
+
+        <div class="feature-quiet">
+            <h2>一些朴素的特点</h2>
+            <ul class="feature-list">
+                <li>页面克制，信息层级清晰，打开后不至于眼花缭乱</li>
+                <li>游戏分类照顾不同口味，但不会用「必玩」「神作」这类词施加压力</li>
+                <li>无需注册就可以试用大部分内容，把选择权留给你</li>
+                <li>更新频率稳定，但不会用红点推送催促你回来</li>
+                <li>每款游戏附带简短的介绍，帮助你快速决定是否感兴趣</li>
+            </ul>
+        </div>
+
+        <div class="scene-note">
+            <h3>一个适合的场景</h3>
+            <p>
+                晚饭后，还有二十分钟的空档。不想打开需要全神贯注的大型游戏，也不想刷短视频滑到停不下来。 
+                你打开 <a href="https://cntv-igame.com" style="color: #1a4d6b; text-decoration: none; border-bottom: 1px solid #a8c1d2;">爱游戏</a>，挑一局节奏舒缓的益智小游戏，或者看看新上架的像素风作品。 
+                时间到了，随手关闭，没有负担。这种「用完即走」的轻松感，或许正是你需要的。
+            </p>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>爱游戏和普通的游戏门户有什么不同？</summary>
+                <p>
+                    它不追求大而全，更在意浏览体验的清爽度。没有弹窗式推送，没有自动播放的视频， 
+                    每个游戏都像一个小展品，等你来发现，而不是追着你推销。
+                </p>
+            </details>
+            <details>
+                <summary>需要注册账号吗？</summary>
+                <p>
+                    大部分内容可以直接浏览和游玩，不需要注册。部分社区互动功能可能需要登录， 
+                    但网站不会用「免费礼包」之类的诱导方式让你留下个人信息。
+                </p>
+            </details>
+            <details>
+                <summary>游戏质量怎么样？</summary>
+                <p>
+                    有经典的老游戏，也有独立开发者投稿的新作品。质量有筛选，但不敢说每一款都是精品。 
+                    网站的态度是：把选择交给你，描述尽量准确，不夸大。
+                </p>
+            </details>
+        </div>
+
+        <div class="gentle-close">
+            如果你愿意，可以从 <a href="https://cntv-igame.com">爱游戏</a> 开始，花几分钟随意看看。 
+            没有压力，也不必抱太高的期待——它只是一个认真打理的游戏小站，<br>安静地等在那里。
+        </div>
+
+        <div class="footnote">
+            d200a891cadf8e2a · 温和的索引页
+        </div>
+    </div>
+</body>
+</html>
